@@ -3,11 +3,11 @@ package com.javaeehandbook.models;
 public class JavaEETechnology {
     private Integer id = null;
     private String name = "";
-    private JavaEETechnologyVersions versions;
+    private UsedVersions versions;
     private String description = "";
 
     public JavaEETechnology() {
-        versions = new JavaEETechnologyVersions();
+        versions = new UsedVersions();
     }
 
     public Integer getId() {

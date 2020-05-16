@@ -1,13 +1,13 @@
 package com.javaeehandbook.models;
 
-class JavaEETechnologyVersions {
+class UsedVersions {
     private String versionForJava4 = "";
     private String versionForJava5 = "";
     private String versionForJava6 = "";
     private String versionForJava7 = "";
     private String versionForJava8 = "";
 
-    JavaEETechnologyVersions() {
+    UsedVersions() {
     }
 
     String getVersionForJava4() {
