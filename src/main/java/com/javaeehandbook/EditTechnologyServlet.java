@@ -1,7 +1,7 @@
 package com.javaeehandbook;
 
-import com.javaeehandbook.bean.JavaEETechnology;
-import com.javaeehandbook.dao.TechnologyDao;
+import com.javaeehandbook.models.JavaEETechnology;
+import com.javaeehandbook.dao.HandbookService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -24,7 +24,7 @@ public class EditTechnologyServlet extends HttpServlet {
         String id = request.getParameter("id");
 
         try {
-            technology = TechnologyDao.getTechnologyById(Integer.parseInt(id));
+            technology = HandbookService.getTechnologyById(Integer.parseInt(id));
         } catch (SQLException e) {
             e.printStackTrace();
             log.error(e.getMessage());
@@ -55,7 +55,7 @@ public class EditTechnologyServlet extends HttpServlet {
 
         String errorMessage = null;
         try {
-            TechnologyDao.updateTechnology(technology);
+            HandbookService.updateTechnology(technology);
         } catch (SQLException e) {
             e.printStackTrace();
             log.error(e.getMessage());

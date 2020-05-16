@@ -1,6 +1,6 @@
 package com.javaeehandbook;
 
-import com.javaeehandbook.dao.TechnologyDao;
+import com.javaeehandbook.dao.HandbookService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -21,7 +21,7 @@ public class DeleteTechnologyServlet extends HttpServlet {
         String errorMessage = null;
 
         try {
-            TechnologyDao.deleteTechnology(TechnologyDao.getTechnologyById(Integer.parseInt(request.getParameter("id"))));
+            HandbookService.deleteTechnology(HandbookService.getTechnologyById(Integer.parseInt(request.getParameter("id"))));
         } catch (SQLException e) {
             e.printStackTrace();
             log.error(e.getMessage());

@@ -1,4 +1,4 @@
-package com.javaeehandbook.bean;
+package com.javaeehandbook.models;
 
 class JavaEETechnologyVersions {
     private String versionForJava4 = "";

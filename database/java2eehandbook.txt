@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS `used_versions` (
+  `used_versions_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `java_4` VARCHAR(50),
+  `java_5` VARCHAR(50),
+  `java_6` VARCHAR(50),
+  `java_7` VARCHAR(50),
+  `java_8` VARCHAR(50),
+  PRIMARY KEY (`used_versions_id`));
+  
+CREATE TABLE IF NOT EXISTS `java_technologies` (
+  `tech_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tech_name` VARCHAR(50),
+  `versions` INT UNSIGNED NOT NULL,
+  `description` VARCHAR(50),
+  PRIMARY KEY (`tech_id`));
+
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES("2.1", "3.0", "3.1", "3.2", "3.2");
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES(NULL, "1.0", "2.0", "2.1", "2.2");
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES("2.4", "2.5", "3.0", "3.1", "4.0");		
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES("2.0", "2.1", "2.2", "2.3", "2.3");
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES(NULL, "1.2", "1.2", "1.2", "1.2");
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES(NULL, "1.2", "2.0", "2.2", "2.3");			
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES("1.0", "1.2", "1.2", "2.2", "2.2");			
+INSERT INTO used_versions(java_4, java_5, java_6, java_7, java_8) VALUES(NULL, NULL, "1.1", "2.0", "2.1");
+
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("EJB", 1, "Enterprise JavaBeans");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JPA", 2, "Java Persistence API");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("Servlet", 3, "Обслуживание запросов веб-клиентов");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JSP", 4, "JavaServer Pages");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JSTL", 5, "JavaServer Pages Standard Tag Library");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JSF", 6, "JavaServer Faces");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JAX-WS", 7, "Java API for XML Web Services");
+INSERT INTO java_technologies(tech_name, versions, description) VALUES("JAX-RS", 8, "Java API for RESTful Web Services");
+
+SELECT * FROM java_technologies INNER JOIN used_versions ON java_technologies.versions = used_versions.used_versions_id;

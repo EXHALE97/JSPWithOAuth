@@ -1,4 +1,4 @@
-package com.javaeehandbook.bean;
+package com.javaeehandbook.models;
 
 public class JavaEETechnology {
     private Integer id = null;

@@ -1,6 +1,6 @@
 package com.javaeehandbook.dao;
 
-import com.javaeehandbook.bean.JavaEETechnology;
+import com.javaeehandbook.models.JavaEETechnology;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -10,12 +10,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TechnologyDao {
+public class HandbookService {
     private static final Logger log;
     private static Database database;
 
     static {
-        log = LogManager.getLogger(TechnologyDao.class);
+        log = LogManager.getLogger(HandbookService.class);
         try {
             database = new Database();
         } catch (Exception e) {
